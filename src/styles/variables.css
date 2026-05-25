@@ -1,0 +1,61 @@
+:root {
+  /* Brand – tamno plava + teal (teren / sport, profesionalno) */
+  --primary: #0d9488;
+  --primary-hover: #0f766e;
+  --primary-active: #115e59;
+  --primary-light: #ccfbf1;
+  --primary-muted: #99f6e4;
+
+  --secondary: #0f172a;
+  --secondary-hover: #1e293b;
+  --accent: #3b82f6;
+  --accent-light: #dbeafe;
+
+  --success: #059669;
+  --success-bg: #ecfdf5;
+  --warning: #d97706;
+  --warning-bg: #fffbeb;
+  --danger: #dc2626;
+  --danger-hover: #b91c1c;
+  --danger-bg: #fef2f2;
+
+  --background: #f1f5f9;
+  --surface: #ffffff;
+  --surface-hover: #f8fafc;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --text-subtle: #94a3b8;
+  --text-inverse: #ffffff;
+
+  /* Stat kartice */
+  --stat-green: #059669;
+  --stat-blue: #2563eb;
+  --stat-orange: #ea580c;
+  --stat-purple: #7c3aed;
+
+  /* Tipografija i razmaci */
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.12);
+
+  --nav-height: 64px;
+  --sidebar-width: 260px;
+  --transition: 0.2s ease;
+
+  /* Kompatibilnost sa starim nazivima */
+  --text-light: var(--text-muted);
+  --textLight: var(--text-muted);
+  --secondary-light: var(--secondary-hover);
+  --primary-dark: var(--primary-hover);
+}
