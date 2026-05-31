@@ -531,7 +531,7 @@ npm run dev   # backend
 
 ## Autori
 
-Fatmir Kurtisi i tim (MojTeren)
+Fatmir Kurtiši i Deni Kosić
 
 ---
 
