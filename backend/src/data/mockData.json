@@ -4,13 +4,28 @@
       "id": 1779776603613,
       "name": "Arena Zenica",
       "city": "Zenica",
-      "sport": "Košarka"
+      "sport": "Košarka",
+      "lat": 44.2031,
+      "lng": 17.9077,
+      "address": "Zenica, Bosna i Hercegovina"
     },
     {
       "id": 1779776615015,
       "name": "Sarajevo Centar",
       "city": "Sarajevo",
-      "sport": "Fudbal"
+      "sport": "Fudbal",
+      "lat": 43.8563,
+      "lng": 18.4131,
+      "address": "Sarajevo, Bosna i Hercegovina"
+    },
+    {
+      "id": 1780187765106,
+      "name": "Hamida",
+      "city": "Zenica",
+      "sport": "Padel",
+      "lat": 44.20031347776177,
+      "lng": 17.932744210767463,
+      "address": "Hamida 2"
     }
   ],
   "terms": [
@@ -163,22 +178,7 @@
       "role": "WORKER"
     }
   ],
-  "reservations": [
-    {
-      "id": 1779777049050,
-      "userName": "Matko",
-      "objectName": "Arena Zenica",
-      "date": "2026-05-26",
-      "startTime": "08:00",
-      "endTime": "12:00",
-      "duration": 4,
-      "pricePerHour": 20,
-      "totalPrice": 80,
-      "status": "CONFIRMED",
-      "loyaltyEarned": 40,
-      "reviewed": false
-    }
-  ],
+  "reservations": [],
   "users": [
     {
       "id": 1,
@@ -202,39 +202,32 @@
       "email": "Matko@test.com",
       "password": "123456",
       "role": "USER",
-      "loyaltyPoints": 40,
-      "remindersEnabled": true
-    }
-  ],
-  "notifications": [
-    {
-      "id": 1779777049051,
-      "userName": "Matko",
-      "type": "REMINDER_SCHEDULED",
-      "title": "Podsjetnik zakazan",
-      "message": "Poslaćemo podsjetnik dan prije termina (2026-05-26).",
-      "reservationId": 1779777049050,
-      "read": false,
-      "createdAt": "2026-05-26T06:30:49.051Z"
+      "loyaltyPoints": 130,
+      "remindersEnabled": true,
+      "specialProfile": "SPORTSKI_KLUB",
+      "specialProfileStatus": "VALIDATED",
+      "specialProfileAssignedAt": "2026-05-26T17:35:56.928Z"
     },
     {
-      "id": 1779777049051,
-      "userName": "Matko",
-      "type": "CONFIRMATION",
-      "title": "Rezervacija potvrđena",
-      "message": "Arena Zenica, 2026-05-26 08:00–12:00. Ukupno 80 KM. +40 loyalty bodova.",
-      "reservationId": 1779777049050,
-      "read": false,
-      "createdAt": "2026-05-26T06:30:49.051Z"
+      "id": 1780185488693,
+      "name": "testkorisnik",
+      "email": "testkorisnik@gmail.com",
+      "password": "test123",
+      "role": "USER",
+      "loyaltyPoints": 10,
+      "remindersEnabled": true,
+      "specialProfile": "LICENCIRANI_TRENER",
+      "specialProfileStatus": "VALIDATED",
+      "specialProfileAssignedAt": "2026-05-31T00:02:26.562Z"
     }
   ],
+  "notifications": [],
   "reviews": [],
   "favorites": [
     {
       "userId": 1779699151869,
-      "objectIds": [
-        1779718308846
-      ]
+      "objectIds": []
     }
-  ]
+  ],
+  "locks": []
 }

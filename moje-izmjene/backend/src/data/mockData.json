@@ -1,0 +1,689 @@
+{
+  "objects": [
+    {
+      "id": 1779718308846,
+      "name": "Arena Zenica",
+      "city": "Zenica",
+<<<<<<< HEAD
+      "sport": "Košarka",
+      "lat": 44.2031,
+      "lng": 17.9077,
+      "address": "Zenica, Bosna i Hercegovina"
+=======
+      "sport": "Košarka"
+>>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
+    },
+    {
+      "id": 1779718328855,
+      "name": "Sarajevo Arena",
+      "city": "Sarajevo",
+<<<<<<< HEAD
+      "sport": "Fudbal",
+      "lat": 43.8563,
+      "lng": 18.4131,
+      "address": "Sarajevo, Bosna i Hercegovina"
+    },
+    {
+      "id": 1780187765106,
+      "name": "Hamida",
+      "city": "Zenica",
+      "sport": "Padel",
+      "lat": 44.20031347776177,
+      "lng": 17.932744210767463,
+      "address": "Hamida 2"
+=======
+      "sport": "Fudbal"
+>>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
+    }
+  ],
+  "terms": [
+    {
+      "id": 1779718370446,
+      "objectName": "Arena Zenica",
+      "date": "2026-05-26",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 20,
+      "status": "FREE"
+    },
+    {
+      "id": 1779718386651,
+      "objectName": "Sarajevo Arena",
+      "date": "2026-05-26",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 15,
+      "status": "FREE"
+    },
+    {
+      "id": 1779726673384,
+      "objectName": "Arena Zenica",
+      "date": "2026-05-25",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 20,
+      "status": "FREE",
+      "lockedSlots": []
+    },
+    {
+      "id": 1779726673386,
+      "objectName": "Arena Zenica",
+      "date": "2026-05-27",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 20,
+      "status": "FREE"
+    },
+    {
+      "id": 1779726673387,
+      "objectName": "Arena Zenica",
+      "date": "2026-05-28",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 20,
+      "status": "FREE"
+    },
+    {
+      "id": 1779726673388,
+      "objectName": "Arena Zenica",
+      "date": "2026-05-29",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 20,
+      "status": "FREE"
+    },
+    {
+      "id": 1779726673389,
+      "objectName": "Arena Zenica",
+      "date": "2026-05-30",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 20,
+      "status": "FREE"
+    },
+    {
+      "id": 1779726673390,
+      "objectName": "Arena Zenica",
+      "date": "2026-05-31",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 20,
+      "status": "FREE"
+    },
+    {
+      "id": 1779726684070,
+      "objectName": "Sarajevo Arena",
+      "date": "2026-05-25",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 15,
+      "status": "FREE"
+    },
+    {
+      "id": 1779726684072,
+      "objectName": "Sarajevo Arena",
+      "date": "2026-05-27",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 15,
+      "status": "FREE"
+    },
+    {
+      "id": 1779726684073,
+      "objectName": "Sarajevo Arena",
+      "date": "2026-05-28",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 15,
+      "status": "FREE"
+    },
+    {
+      "id": 1779726684074,
+      "objectName": "Sarajevo Arena",
+      "date": "2026-05-29",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 15,
+      "status": "FREE"
+    },
+    {
+      "id": 1779726684075,
+      "objectName": "Sarajevo Arena",
+      "date": "2026-05-30",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 15,
+      "status": "FREE"
+    },
+    {
+      "id": 1779726684076,
+      "objectName": "Sarajevo Arena",
+      "date": "2026-05-31",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 15,
+      "status": "FREE"
+    }
+  ],
+  "workers": [
+    {
+      "id": 1779659894764,
+      "name": "Deni",
+      "email": "Deni@test.com",
+      "role": "WORKER"
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1779718431492,
+      "userName": "Matko",
+      "objectName": "Arena Zenica",
+      "date": "2026-05-26",
+      "startTime": "10:00",
+      "endTime": "12:00",
+      "duration": 2,
+      "pricePerHour": 20,
+      "totalPrice": 40,
+<<<<<<< HEAD
+      "status": "CANCELLED",
+      "loyaltyEarned": 20,
+      "reviewed": false,
+      "cancelReason": "jer hocu"
+=======
+      "status": "CONFIRMED",
+      "loyaltyEarned": 20,
+      "reviewed": false
+>>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
+    },
+    {
+      "id": 1779718431493,
+      "userName": "Matko",
+      "objectName": "Sarajevo Arena",
+      "date": "2026-05-20",
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "duration": 2,
+      "pricePerHour": 15,
+      "totalPrice": 30,
+<<<<<<< HEAD
+      "status": "CANCELLED",
+      "loyaltyEarned": 20,
+      "reviewed": false,
+      "cancelReason": "moze mi seeeee"
+=======
+      "status": "CONFIRMED",
+      "loyaltyEarned": 20,
+      "reviewed": false
+>>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
+    },
+    {
+      "id": 1779728207752,
+      "userName": "Matko",
+      "objectName": "Arena Zenica",
+      "date": "2026-05-25",
+      "startTime": "13:00",
+      "endTime": "15:00",
+      "duration": 2,
+      "pricePerHour": 20,
+      "totalPrice": 40,
+<<<<<<< HEAD
+      "status": "CANCELLED",
+      "loyaltyEarned": 20,
+      "reviewed": false,
+      "cancelReason": "jer mi se moze"
+    },
+    {
+      "id": 1779816221226,
+      "userName": "Matko",
+      "objectName": "Arena Zenica",
+      "date": "2026-05-28",
+      "startTime": "11:00",
+      "endTime": "13:00",
+      "duration": 2,
+      "pricePerHour": 20,
+      "totalPrice": 40,
+      "status": "CANCELLED",
+      "reviewed": false,
+      "createdAt": "2026-05-26T17:23:41.226Z",
+      "loyaltyEarned": 20,
+      "paidAt": "2026-05-26T17:23:45.790Z",
+      "payment": {
+        "provider": "mock",
+        "sessionId": null,
+        "amount": 40,
+        "currency": "BAM"
+      },
+      "cancelledAt": "2026-05-26T17:23:58.368Z",
+      "refundEligible": true
+    },
+    {
+      "id": 1779818839704,
+      "userName": "Matko",
+      "objectName": "Arena Zenica",
+      "date": "2026-05-27",
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "duration": 2,
+      "pricePerHour": 20,
+      "totalPrice": 40,
+      "status": "CANCELLED",
+      "reviewed": false,
+      "createdAt": "2026-05-26T18:07:19.704Z",
+      "payment": {
+        "provider": "stripe",
+        "sessionId": "cs_test_a1dyKUUraCgihQxf9eP4gMaL3cn8QI6FR7oHlsreBOvNKxOgsQ2tuFTvXW",
+        "amount": 40,
+        "currency": "BAM",
+        "status": "PENDING"
+      },
+      "cancelReason": "PAYMENT_TIMEOUT",
+      "cancelledAt": "2026-05-30T23:52:58.954Z"
+    },
+    {
+      "id": 1779818926453,
+      "userName": "Matko",
+      "objectName": "Arena Zenica",
+      "date": "2026-05-25",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "duration": 2,
+      "pricePerHour": 20,
+      "totalPrice": 40,
+      "status": "CANCELLED",
+      "reviewed": false,
+      "createdAt": "2026-05-26T18:08:46.453Z",
+      "payment": {
+        "provider": "stripe",
+        "sessionId": "cs_test_a1jnNiNWNUPJ2nuuritLgqahFmqeMMDepfy8acaWxMufScXoqFX3GuwQAI",
+        "amount": 40,
+        "currency": "BAM",
+        "status": "PENDING"
+      },
+      "cancelReason": "PAYMENT_TIMEOUT",
+      "cancelledAt": "2026-05-30T23:52:58.955Z"
+    },
+    {
+      "id": 1780187888522,
+      "userName": "Matko",
+      "objectName": "Arena Zenica",
+      "date": "2026-05-30",
+      "startTime": "17:00",
+      "endTime": "22:00",
+      "duration": 5,
+      "pricePerHour": 20,
+      "totalPrice": 100,
+      "status": "CANCELLED",
+      "reviewed": false,
+      "createdAt": "2026-05-31T00:38:08.522Z",
+      "payment": {
+        "provider": "stripe",
+        "sessionId": "cs_test_a1qYqgnix8t8tbzNCPYyqhmZdDUUJJoyAzKHebopp13vknYMVm93CQonp7",
+        "amount": 100,
+        "currency": "BAM",
+        "status": "PENDING"
+      },
+      "cancelReason": "PAYMENT_TIMEOUT",
+      "cancelledAt": "2026-05-31T00:43:09.403Z"
+    },
+    {
+      "id": 1780188053527,
+      "userName": "Matko",
+      "objectName": "Sarajevo Arena",
+      "date": "2026-05-31",
+      "startTime": "19:00",
+      "endTime": "22:00",
+      "duration": 3,
+      "pricePerHour": 15,
+      "totalPrice": 45,
+      "status": "CANCELLED",
+      "reviewed": false,
+      "createdAt": "2026-05-31T00:40:53.527Z",
+      "payment": {
+        "provider": "stripe",
+        "sessionId": "cs_test_a1NqHYwLDzCTI5YM3Vl0HscdWzlLNzAC4J9mrA470Uvn5RnSd1UmzIKAYp",
+        "amount": 45,
+        "currency": "BAM",
+        "status": "PENDING"
+      },
+      "cancelReason": "PAYMENT_TIMEOUT",
+      "cancelledAt": "2026-05-31T00:46:01.938Z"
+    },
+    {
+      "id": 1780188234920,
+      "userName": "Matko",
+      "objectName": "Arena Zenica",
+      "date": "2026-05-31",
+      "startTime": "19:00",
+      "endTime": "21:00",
+      "duration": 2,
+      "pricePerHour": 20,
+      "totalPrice": 40,
+      "status": "CANCELLED",
+      "reviewed": false,
+      "createdAt": "2026-05-31T00:43:54.920Z",
+      "payment": {
+        "provider": "stripe",
+        "sessionId": "cs_test_a1uSFN0Lr8rpJUVpdrrh58ZZow79xIqSAQX4zlJUh2cpuFM7MDnn7MpyB9",
+        "amount": 40,
+        "currency": "BAM",
+        "status": "PENDING"
+      },
+      "cancelReason": "PAYMENT_TIMEOUT",
+      "cancelledAt": "2026-05-31T00:49:02.402Z"
+    },
+    {
+      "id": 1780190300255,
+      "userName": "testkorisnik",
+      "objectName": "Arena Zenica",
+      "date": "2026-05-30",
+      "startTime": "20:00",
+      "endTime": "22:00",
+      "duration": 2,
+      "pricePerHour": 20,
+      "totalPrice": 40,
+      "status": "CANCELLED",
+      "reviewed": false,
+      "createdAt": "2026-05-31T01:18:20.255Z",
+      "payment": {
+        "provider": "stripe-demo",
+        "sessionId": null,
+        "amount": 40,
+        "currency": "BAM",
+        "status": "PENDING"
+      },
+      "cancelReason": "PAYMENT_TIMEOUT",
+      "cancelledAt": "2026-05-31T01:23:34.156Z"
+    },
+    {
+      "id": 1780190445821,
+      "userName": "testkorisnik",
+      "objectName": "Arena Zenica",
+      "date": "2026-05-30",
+      "startTime": "18:00",
+      "endTime": "19:00",
+      "duration": 1,
+      "pricePerHour": 20,
+      "totalPrice": 20,
+      "status": "CONFIRMED",
+      "reviewed": false,
+      "createdAt": "2026-05-31T01:20:45.821Z",
+      "payment": {
+        "provider": "stripe",
+        "sessionId": "cs_test_a18oIbcmcokoSM712JwaEe7maGSWz6FpijcU4DwLXC3IbFkxLOwP5PRPpc",
+        "amount": 20,
+        "currency": "BAM"
+      },
+      "loyaltyEarned": 10,
+      "paidAt": "2026-05-31T01:21:07.358Z"
+    },
+    {
+      "id": 1780190530078,
+      "userName": "testkorisnik",
+      "objectName": "Sarajevo Arena",
+      "date": "2026-05-31",
+      "startTime": "21:00",
+      "endTime": "22:00",
+      "duration": 1,
+      "pricePerHour": 15,
+      "totalPrice": 15,
+      "status": "CANCELLED",
+      "reviewed": false,
+      "createdAt": "2026-05-31T01:22:10.078Z",
+      "payment": {
+        "provider": "stripe",
+        "sessionId": "cs_test_a1DFV0WnIOOLMneQLbSRtX9bObnX2LfCRvWNRyfC4LdnEJjtluFDoRfPjf",
+        "amount": 15,
+        "currency": "BAM",
+        "status": "PENDING"
+      },
+      "cancelReason": "moze mi se"
+    },
+    {
+      "id": 1780191493483,
+      "userName": "Matko",
+      "objectName": "Arena Zenica",
+      "date": "2026-05-31",
+      "startTime": "16:00",
+      "endTime": "22:00",
+      "duration": 6,
+      "pricePerHour": 20,
+      "totalPrice": 120,
+      "status": "CONFIRMED",
+      "reviewed": false,
+      "createdAt": "2026-05-31T01:38:13.483Z",
+      "payment": {
+        "provider": "stripe",
+        "sessionId": "cs_test_a1gyZB2Qj8YDiPlmKCsIXTFEuvwetl9rOgruE5bF1pCdSqVh1sx40U4gQe",
+        "amount": 120,
+        "currency": "BAM"
+      },
+      "loyaltyEarned": 60,
+      "paidAt": "2026-05-31T01:38:39.906Z"
+=======
+      "status": "CONFIRMED",
+      "loyaltyEarned": 20,
+      "reviewed": false
+>>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Fatmir",
+      "email": "Fatmir@test.com",
+      "password": "123456",
+      "role": "OWNER",
+      "loyaltyPoints": 0,
+      "remindersEnabled": true
+    },
+    {
+      "id": 1779659894765,
+      "name": "Deni",
+      "email": "Deni@test.com",
+      "password": "123456",
+      "role": "WORKER",
+      "loyaltyPoints": 0,
+      "remindersEnabled": true
+    },
+    {
+      "id": 1779699151869,
+      "name": "Matko",
+      "email": "Matko@test.com",
+      "password": "123456",
+      "role": "USER",
+<<<<<<< HEAD
+      "loyaltyPoints": 130,
+      "remindersEnabled": true,
+      "specialProfile": "SPORTSKI_KLUB",
+      "specialProfileStatus": "VALIDATED",
+      "specialProfileAssignedAt": "2026-05-26T17:35:56.928Z"
+    },
+    {
+      "id": 1780185488693,
+      "name": "testkorisnik",
+      "email": "testkorisnik@gmail.com",
+      "password": "test123",
+      "role": "USER",
+      "loyaltyPoints": 10,
+      "remindersEnabled": true,
+      "specialProfile": "LICENCIRANI_TRENER",
+      "specialProfileStatus": "VALIDATED",
+      "specialProfileAssignedAt": "2026-05-31T00:02:26.562Z"
+=======
+      "loyaltyPoints": 70,
+      "remindersEnabled": true
+>>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
+    }
+  ],
+  "notifications": [
+    {
+<<<<<<< HEAD
+      "id": 1780191519906,
+      "userName": "Matko",
+      "type": "CONFIRMATION",
+      "title": "Rezervacija potvrđena",
+      "message": "Arena Zenica, 2026-05-31 16:00–22:00. Ukupno 120 KM. +60 loyalty bodova.",
+      "reservationId": 1780191493483,
+      "read": false,
+      "createdAt": "2026-05-31T01:38:39.906Z"
+    },
+    {
+      "id": 1780190614157,
+      "userName": "testkorisnik",
+      "type": "PAYMENT_EXPIRED",
+      "title": "Rezervacija istekla",
+      "message": "Zaključavanje termina je isteklo (5 min) jer plaćanje nije završeno. Termin je ponovo slobodan.",
+      "reservationId": 1780190300255,
+      "read": false,
+      "createdAt": "2026-05-31T01:23:34.157Z"
+    },
+    {
+      "id": 1780190467358,
+      "userName": "testkorisnik",
+      "type": "CONFIRMATION",
+      "title": "Rezervacija potvrđena",
+      "message": "Arena Zenica, 2026-05-30 18:00–19:00. Ukupno 20 KM. +10 loyalty bodova.",
+      "reservationId": 1780190445821,
+      "read": false,
+      "createdAt": "2026-05-31T01:21:07.358Z"
+    },
+    {
+      "id": 1780188542403,
+      "userName": "Matko",
+      "type": "PAYMENT_EXPIRED",
+      "title": "Rezervacija istekla",
+      "message": "Zaključavanje termina je isteklo (5 min) jer plaćanje nije završeno. Termin je ponovo slobodan.",
+      "reservationId": 1780188234920,
+      "read": true,
+      "createdAt": "2026-05-31T00:49:02.403Z"
+    },
+    {
+      "id": 1780188361939,
+      "userName": "Matko",
+      "type": "PAYMENT_EXPIRED",
+      "title": "Rezervacija istekla",
+      "message": "Zaključavanje termina je isteklo (5 min) jer plaćanje nije završeno. Termin je ponovo slobodan.",
+      "reservationId": 1780188053527,
+      "read": true,
+      "createdAt": "2026-05-31T00:46:01.939Z"
+    },
+    {
+      "id": 1780188189405,
+      "userName": "Matko",
+      "type": "PAYMENT_EXPIRED",
+      "title": "Rezervacija istekla",
+      "message": "Zaključavanje termina je isteklo (5 min) jer plaćanje nije završeno. Termin je ponovo slobodan.",
+      "reservationId": 1780187888522,
+      "read": true,
+      "createdAt": "2026-05-31T00:43:09.405Z"
+    },
+    {
+      "id": 1780185746562,
+      "userName": "testkorisnik",
+      "type": "SPECIAL_PROFILE_ASSIGNED",
+      "title": "Specijalni profil aktiviran",
+      "message": "Dobijate pogodnosti za: Licencirani trener.",
+      "reservationId": null,
+      "read": true,
+      "createdAt": "2026-05-31T00:02:26.562Z"
+    },
+    {
+      "id": 1780185178955,
+      "userName": "Matko",
+      "type": "PAYMENT_EXPIRED",
+      "title": "Rezervacija istekla",
+      "message": "Zaključavanje termina je isteklo (5 min) jer plaćanje nije završeno. Termin je ponovo slobodan.",
+      "reservationId": 1779818926453,
+      "read": true,
+      "createdAt": "2026-05-30T23:52:58.955Z"
+    },
+    {
+      "id": 1780185178955,
+      "userName": "Matko",
+      "type": "PAYMENT_EXPIRED",
+      "title": "Rezervacija istekla",
+      "message": "Zaključavanje termina je isteklo (5 min) jer plaćanje nije završeno. Termin je ponovo slobodan.",
+      "reservationId": 1779818839704,
+      "read": true,
+      "createdAt": "2026-05-30T23:52:58.955Z"
+    },
+    {
+      "id": 1779816956928,
+      "userName": "Matko",
+      "type": "SPECIAL_PROFILE_ASSIGNED",
+      "title": "Specijalni profil aktiviran",
+      "message": "Dobijate pogodnosti za: Sportski klub.",
+      "reservationId": null,
+      "read": true,
+      "createdAt": "2026-05-26T17:35:56.928Z"
+    },
+    {
+      "id": 1779816238368,
+      "userName": "Matko",
+      "type": "CANCELLATION",
+      "title": "Rezervacija otkazana",
+      "message": "Arena Zenica, 2026-05-28. Besplatno otkazivanje – povrat punog iznosa i loyalty bodova.",
+      "reservationId": 1779816221226,
+      "read": true,
+      "createdAt": "2026-05-26T17:23:58.368Z"
+    },
+    {
+      "id": 1779816225790,
+      "userName": "Matko",
+      "type": "CONFIRMATION",
+      "title": "Rezervacija potvrđena",
+      "message": "Arena Zenica, 2026-05-28 11:00–13:00. Ukupno 40 KM. +20 loyalty bodova.",
+      "reservationId": 1779816221226,
+      "read": true,
+      "createdAt": "2026-05-26T17:23:45.790Z"
+    },
+    {
+=======
+>>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
+      "id": 1779728207752,
+      "userName": "Matko",
+      "type": "REMINDER_SCHEDULED",
+      "title": "Podsjetnik zakazan",
+      "message": "Poslaćemo podsjetnik dan prije termina (2026-05-25).",
+      "reservationId": 1779728207752,
+      "read": true,
+      "createdAt": "2026-05-25T16:56:47.752Z"
+    },
+    {
+      "id": 1779728207752,
+      "userName": "Matko",
+      "type": "CONFIRMATION",
+      "title": "Rezervacija potvrđena",
+      "message": "Arena Zenica, 2026-05-25 13:00–15:00. Ukupno 40 KM. +20 loyalty bodova.",
+      "reservationId": 1779728207752,
+      "read": true,
+      "createdAt": "2026-05-25T16:56:47.752Z"
+    },
+    {
+      "id": 1779726529823.0247,
+      "userName": "Matko",
+      "reservationId": 1779718431492,
+      "type": "REMINDER",
+      "title": "Podsjetnik za rezervaciju",
+      "message": "Sutra imate termin: Arena Zenica, 2026-05-26 10:00–12:00.",
+      "read": true,
+      "createdAt": "2026-05-25T16:28:49.824Z"
+    }
+  ],
+  "reviews": [],
+  "favorites": [
+    {
+      "userId": 1779699151869,
+<<<<<<< HEAD
+      "objectIds": []
+    }
+  ],
+  "locks": []
+=======
+      "objectIds": [
+        1779718308846
+      ]
+    }
+  ]
+>>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
+}
