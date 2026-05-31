@@ -1,41 +1,23 @@
 {
   "objects": [
     {
-      "id": 1779718308846,
+      "id": 1779776603613,
       "name": "Arena Zenica",
       "city": "Zenica",
       "sport": "Košarka"
     },
     {
-      "id": 1779718328855,
-      "name": "Sarajevo Arena",
+      "id": 1779776615015,
+      "name": "Sarajevo Centar",
       "city": "Sarajevo",
       "sport": "Fudbal"
     }
   ],
   "terms": [
     {
-      "id": 1779718370446,
+      "id": 1779776840817,
       "objectName": "Arena Zenica",
       "date": "2026-05-26",
-      "startTime": "08:00",
-      "endTime": "22:00",
-      "price": 20,
-      "status": "FREE"
-    },
-    {
-      "id": 1779718386651,
-      "objectName": "Sarajevo Arena",
-      "date": "2026-05-26",
-      "startTime": "08:00",
-      "endTime": "22:00",
-      "price": 15,
-      "status": "FREE"
-    },
-    {
-      "id": 1779726673384,
-      "objectName": "Arena Zenica",
-      "date": "2026-05-25",
       "startTime": "08:00",
       "endTime": "22:00",
       "price": 20,
@@ -43,108 +25,139 @@
       "lockedSlots": []
     },
     {
-      "id": 1779726673386,
+      "id": 1779776840819,
       "objectName": "Arena Zenica",
       "date": "2026-05-27",
       "startTime": "08:00",
       "endTime": "22:00",
       "price": 20,
-      "status": "FREE"
+      "status": "FREE",
+      "lockedSlots": []
     },
     {
-      "id": 1779726673387,
+      "id": 1779776840820,
       "objectName": "Arena Zenica",
       "date": "2026-05-28",
       "startTime": "08:00",
       "endTime": "22:00",
       "price": 20,
-      "status": "FREE"
+      "status": "FREE",
+      "lockedSlots": []
     },
     {
-      "id": 1779726673388,
+      "id": 1779776840821,
       "objectName": "Arena Zenica",
       "date": "2026-05-29",
       "startTime": "08:00",
       "endTime": "22:00",
       "price": 20,
-      "status": "FREE"
+      "status": "FREE",
+      "lockedSlots": []
     },
     {
-      "id": 1779726673389,
+      "id": 1779776840822,
       "objectName": "Arena Zenica",
       "date": "2026-05-30",
       "startTime": "08:00",
       "endTime": "22:00",
       "price": 20,
-      "status": "FREE"
+      "status": "FREE",
+      "lockedSlots": []
     },
     {
-      "id": 1779726673390,
+      "id": 1779776840823,
       "objectName": "Arena Zenica",
       "date": "2026-05-31",
       "startTime": "08:00",
       "endTime": "22:00",
       "price": 20,
-      "status": "FREE"
+      "status": "FREE",
+      "lockedSlots": []
     },
     {
-      "id": 1779726684070,
-      "objectName": "Sarajevo Arena",
-      "date": "2026-05-25",
+      "id": 1779776840824,
+      "objectName": "Arena Zenica",
+      "date": "2026-06-01",
       "startTime": "08:00",
       "endTime": "22:00",
-      "price": 15,
-      "status": "FREE"
+      "price": 20,
+      "status": "FREE",
+      "lockedSlots": []
     },
     {
-      "id": 1779726684072,
-      "objectName": "Sarajevo Arena",
+      "id": 1779776876375,
+      "objectName": "Sarajevo Centar",
+      "date": "2026-05-26",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 20,
+      "status": "FREE",
+      "lockedSlots": []
+    },
+    {
+      "id": 1779776876376,
+      "objectName": "Sarajevo Centar",
       "date": "2026-05-27",
       "startTime": "08:00",
       "endTime": "22:00",
-      "price": 15,
-      "status": "FREE"
+      "price": 20,
+      "status": "FREE",
+      "lockedSlots": []
     },
     {
-      "id": 1779726684073,
-      "objectName": "Sarajevo Arena",
+      "id": 1779776876377,
+      "objectName": "Sarajevo Centar",
       "date": "2026-05-28",
       "startTime": "08:00",
       "endTime": "22:00",
-      "price": 15,
-      "status": "FREE"
+      "price": 20,
+      "status": "FREE",
+      "lockedSlots": []
     },
     {
-      "id": 1779726684074,
-      "objectName": "Sarajevo Arena",
+      "id": 1779776876378,
+      "objectName": "Sarajevo Centar",
       "date": "2026-05-29",
       "startTime": "08:00",
       "endTime": "22:00",
-      "price": 15,
-      "status": "FREE"
+      "price": 20,
+      "status": "FREE",
+      "lockedSlots": []
     },
     {
-      "id": 1779726684075,
-      "objectName": "Sarajevo Arena",
+      "id": 1779776876379,
+      "objectName": "Sarajevo Centar",
       "date": "2026-05-30",
       "startTime": "08:00",
       "endTime": "22:00",
-      "price": 15,
-      "status": "FREE"
+      "price": 20,
+      "status": "FREE",
+      "lockedSlots": []
     },
     {
-      "id": 1779726684076,
-      "objectName": "Sarajevo Arena",
+      "id": 1779776876380,
+      "objectName": "Sarajevo Centar",
       "date": "2026-05-31",
       "startTime": "08:00",
       "endTime": "22:00",
-      "price": 15,
-      "status": "FREE"
+      "price": 20,
+      "status": "FREE",
+      "lockedSlots": []
+    },
+    {
+      "id": 1779776876381,
+      "objectName": "Sarajevo Centar",
+      "date": "2026-06-01",
+      "startTime": "08:00",
+      "endTime": "22:00",
+      "price": 20,
+      "status": "FREE",
+      "lockedSlots": []
     }
   ],
   "workers": [
     {
-      "id": 1779659894764,
+      "id": 1779776713855,
       "name": "Deni",
       "email": "Deni@test.com",
       "role": "WORKER"
@@ -152,45 +165,17 @@
   ],
   "reservations": [
     {
-      "id": 1779718431492,
+      "id": 1779777049050,
       "userName": "Matko",
       "objectName": "Arena Zenica",
       "date": "2026-05-26",
-      "startTime": "10:00",
+      "startTime": "08:00",
       "endTime": "12:00",
-      "duration": 2,
+      "duration": 4,
       "pricePerHour": 20,
-      "totalPrice": 40,
+      "totalPrice": 80,
       "status": "CONFIRMED",
-      "loyaltyEarned": 20,
-      "reviewed": false
-    },
-    {
-      "id": 1779718431493,
-      "userName": "Matko",
-      "objectName": "Sarajevo Arena",
-      "date": "2026-05-20",
-      "startTime": "14:00",
-      "endTime": "16:00",
-      "duration": 2,
-      "pricePerHour": 15,
-      "totalPrice": 30,
-      "status": "CONFIRMED",
-      "loyaltyEarned": 20,
-      "reviewed": false
-    },
-    {
-      "id": 1779728207752,
-      "userName": "Matko",
-      "objectName": "Arena Zenica",
-      "date": "2026-05-25",
-      "startTime": "13:00",
-      "endTime": "15:00",
-      "duration": 2,
-      "pricePerHour": 20,
-      "totalPrice": 40,
-      "status": "CONFIRMED",
-      "loyaltyEarned": 20,
+      "loyaltyEarned": 40,
       "reviewed": false
     }
   ],
@@ -205,54 +190,42 @@
       "remindersEnabled": true
     },
     {
-      "id": 1779659894765,
+      "id": 1779776713856,
       "name": "Deni",
       "email": "Deni@test.com",
       "password": "123456",
-      "role": "WORKER",
-      "loyaltyPoints": 0,
-      "remindersEnabled": true
+      "role": "WORKER"
     },
     {
-      "id": 1779699151869,
+      "id": 1779776978264,
       "name": "Matko",
       "email": "Matko@test.com",
       "password": "123456",
       "role": "USER",
-      "loyaltyPoints": 70,
+      "loyaltyPoints": 40,
       "remindersEnabled": true
     }
   ],
   "notifications": [
     {
-      "id": 1779728207752,
+      "id": 1779777049051,
       "userName": "Matko",
       "type": "REMINDER_SCHEDULED",
       "title": "Podsjetnik zakazan",
-      "message": "Poslaćemo podsjetnik dan prije termina (2026-05-25).",
-      "reservationId": 1779728207752,
-      "read": true,
-      "createdAt": "2026-05-25T16:56:47.752Z"
+      "message": "Poslaćemo podsjetnik dan prije termina (2026-05-26).",
+      "reservationId": 1779777049050,
+      "read": false,
+      "createdAt": "2026-05-26T06:30:49.051Z"
     },
     {
-      "id": 1779728207752,
+      "id": 1779777049051,
       "userName": "Matko",
       "type": "CONFIRMATION",
       "title": "Rezervacija potvrđena",
-      "message": "Arena Zenica, 2026-05-25 13:00–15:00. Ukupno 40 KM. +20 loyalty bodova.",
-      "reservationId": 1779728207752,
-      "read": true,
-      "createdAt": "2026-05-25T16:56:47.752Z"
-    },
-    {
-      "id": 1779726529823.0247,
-      "userName": "Matko",
-      "reservationId": 1779718431492,
-      "type": "REMINDER",
-      "title": "Podsjetnik za rezervaciju",
-      "message": "Sutra imate termin: Arena Zenica, 2026-05-26 10:00–12:00.",
-      "read": true,
-      "createdAt": "2026-05-25T16:28:49.824Z"
+      "message": "Arena Zenica, 2026-05-26 08:00–12:00. Ukupno 80 KM. +40 loyalty bodova.",
+      "reservationId": 1779777049050,
+      "read": false,
+      "createdAt": "2026-05-26T06:30:49.051Z"
     }
   ],
   "reviews": [],
