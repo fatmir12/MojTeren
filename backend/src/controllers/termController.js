@@ -10,13 +10,10 @@ import {
 } from "../utils/termLockUtils.js"
 import { deductLoyaltyPoints } from "./loyaltyController.js"
 import { addNotification } from "../services/notificationService.js"
-<<<<<<< HEAD
 import {
   cleanupExpiredLocks,
   getPaymentLockedSlotsForTerm,
 } from "../services/lockService.js"
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 
 function cancelReservationsForTerm(data, term, reservations, reasonTitle) {
   const cancelled = []
@@ -71,7 +68,6 @@ function isValidTimeRange(startTime, endTime) {
 
 export async function getTerms(req, res) {
   const data = await readData()
-<<<<<<< HEAD
   const { expired } = cleanupExpiredLocks(data)
   if (expired.length > 0) {
     await writeData(data)
@@ -83,21 +79,11 @@ export async function getTerms(req, res) {
       ...term,
       paymentLockedSlots: getPaymentLockedSlotsForTerm(data, term),
     })),
-=======
-
-  res.json({
-    success: true,
-    data: data.terms,
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   })
 }
 
 export async function addTerm(req, res) {
-<<<<<<< HEAD
   const { objectName, date, startTime, endTime, price, status } = req.body
-=======
-  const { objectName, date, startTime, endTime, price, status, lockedSlots } = req.body
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 
   if (!objectName || !date || !startTime || !endTime || !price || !status) {
     return res.status(400).json({

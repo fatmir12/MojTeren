@@ -26,12 +26,8 @@ const ACTIVE_RESERVATION_STATUSES = ["CONFIRMED", "WAITING_PAYMENT", "CREATED"]
 export function isHourLocked(term, hourStart) {
   if (!term) return false
   if (term.status === "LOCKED") return true
-<<<<<<< HEAD
   if ((term.lockedSlots || []).includes(hourStart)) return true
   return (term.paymentLockedSlots || []).includes(hourStart)
-=======
-  return (term.lockedSlots || []).includes(hourStart)
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 }
 
 export function isHourReserved(hourStart, hourEnd, reservations, objectName, date) {
@@ -83,21 +79,13 @@ export function getHourlySlots(terms, reservations, objectName, date, rangeStart
 
       if (hourReserved) {
         status = "RESERVED"
-<<<<<<< HEAD
         label = "Rezervirano"
-=======
-        label = "Rezervisano"
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
       } else if (hourLocked) {
         status = "LOCKED"
         label = "Zaključan"
       } else if (term.status === "RESERVED") {
         status = "RESERVED"
-<<<<<<< HEAD
         label = "Rezervirano"
-=======
-        label = "Rezervisano"
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
       }
 
       const exists = slots.some((s) => s.startTime === hourStart)

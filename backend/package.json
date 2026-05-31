@@ -9,12 +9,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
-<<<<<<< HEAD
     "express": "^5.1.0",
     "stripe": "^18.4.0"
-=======
-    "express": "^5.1.0"
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   },
   "devDependencies": {
     "nodemon": "^3.1.14"

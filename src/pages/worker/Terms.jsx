@@ -494,11 +494,7 @@ function Terms() {
                 {stats.slots.length === 0 ? (
                   <p className="section-hint">Nema satnica za prikaz.</p>
                 ) : (
-<<<<<<< HEAD
                   <div className="hourly-slots-grid worker-hourly-grid">
-=======
-                  <div className="hourly-slots-grid worker-hourly-grid hourly-slots-scroll">
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
                     {stats.slots.map((slot) => (
                       <button
                         type="button"

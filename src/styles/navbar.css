@@ -15,7 +15,6 @@
 
 .navbar-logo {
   margin: 0;
-<<<<<<< HEAD
   padding: 0;
   border: none;
   background: none;
@@ -47,26 +46,6 @@
   color: var(--primary);
 }
 
-=======
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: var(--secondary);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.navbar-logo::before {
-  content: "";
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--primary) 0%, #14b8a6 100%);
-  flex-shrink: 0;
-}
-
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 .navbar-user {
   display: flex;
   align-items: center;
@@ -97,7 +76,6 @@
   border-color: #fecaca;
   color: var(--danger);
 }
-<<<<<<< HEAD
 
 .navbar-actions {
   display: flex;
@@ -157,5 +135,3 @@
     width: 100%;
   }
 }
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473

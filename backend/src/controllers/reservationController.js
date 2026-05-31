@@ -4,15 +4,12 @@ import {
   isHourLocked,
 } from "../utils/termLockUtils.js"
 import {
-<<<<<<< HEAD
   cleanupExpiredLocks,
   createPaymentLocksForReservation,
   isSlotPaymentLocked,
   ensureReservationDoesNotConflictWithLocksOrReservations,
 } from "../services/lockService.js"
 import {
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   canCancelWithRefund,
   getCancellationPolicyMessage,
   isReservationPast,
@@ -32,13 +29,10 @@ function calculateHours(startTime, endTime) {
 
 export async function getReservations(req, res) {
   const data = await readData()
-<<<<<<< HEAD
   const { expired } = cleanupExpiredLocks(data)
   if (expired.length > 0) {
     await writeData(data)
   }
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 
   res.json({
     success: true,
@@ -72,7 +66,6 @@ export async function addReservation(req, res) {
   }
 
   const data = await readData()
-<<<<<<< HEAD
   cleanupExpiredLocks(data)
 
   const conflict = ensureReservationDoesNotConflictWithLocksOrReservations(data, {
@@ -90,8 +83,6 @@ export async function addReservation(req, res) {
       message: conflict.message,
     })
   }
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 
   const term = data.terms.find((term) => {
     return (
@@ -127,7 +118,6 @@ export async function addReservation(req, res) {
     })
   }
 
-<<<<<<< HEAD
   const paymentLockedHour = bookingHours.find((hour) =>
     isSlotPaymentLocked(data, { objectName, date }, hour)
   )
@@ -139,8 +129,6 @@ export async function addReservation(req, res) {
     })
   }
 
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   const overlap = data.reservations.find((reservation) => {
     if (
       reservation.objectName !== objectName ||
@@ -159,11 +147,7 @@ export async function addReservation(req, res) {
   if (overlap) {
     return res.status(400).json({
       success: false,
-<<<<<<< HEAD
       message: "Odabrani period je već rezerviran.",
-=======
-      message: "Odabrani period je već rezervisan.",
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
     })
   }
 
@@ -187,14 +171,11 @@ export async function addReservation(req, res) {
 
   data.reservations.push(newReservation)
 
-<<<<<<< HEAD
   if (status === "WAITING_PAYMENT") {
     const { expiresAtMs } = createPaymentLocksForReservation(data, newReservation)
     newReservation.lockExpiresAtMs = expiresAtMs
   }
 
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   if (status === "CONFIRMED") {
     addLoyaltyPoints(data, userName, loyaltyEarned)
 
@@ -233,11 +214,7 @@ export async function addReservation(req, res) {
 
 export async function cancelReservation(req, res) {
   const id = Number(req.params.id)
-<<<<<<< HEAD
-=======
   const { userName } = req.body
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
-
   const data = await readData()
 
   const reservation = data.reservations.find((r) => r.id === id)

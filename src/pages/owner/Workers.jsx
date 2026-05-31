@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react"
 import api from "../../services/api"
-<<<<<<< HEAD
 import { formatRole } from "../../utils/roleLabels"
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 
 function Workers() {
   const [workers, setWorkers] = useState([])
@@ -180,13 +177,9 @@ function Workers() {
             <div className="object-card" key={worker.id}>
               <h3>{worker.name}</h3>
               <p>{worker.email}</p>
-<<<<<<< HEAD
               <p>
                 {formatRole(worker.role)}
               </p>
-=======
-              <p>{worker.role}</p>
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 
               <div className="card-buttons">
                 <button className="edit-btn" onClick={() => handleEdit(worker)}>

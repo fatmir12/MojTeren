@@ -12,15 +12,12 @@ dist
 dist-ssr
 *.local
 
-<<<<<<< HEAD
 # Secrets – nikad na GitHub
 .env
 .env.*
 !.env.example
 backend/.env
 
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

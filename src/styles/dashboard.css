@@ -878,7 +878,6 @@
 }
 
 /* —— Profil i historija —— */
-<<<<<<< HEAD
 .profile-hero {
   display: flex;
   align-items: flex-start;
@@ -950,8 +949,6 @@
   border-radius: 999px;
 }
 
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 .profile-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1215,7 +1212,6 @@
   margin-bottom: 24px;
 }
 
-<<<<<<< HEAD
 .object-form.worker-filters {
   display: flex;
   flex-wrap: wrap;
@@ -1223,16 +1219,11 @@
   align-items: flex-end;
   margin-bottom: 16px;
   grid-template-columns: unset;
-=======
-.worker-filters {
-  margin-bottom: 16px;
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 }
 
 .worker-filters .form-field {
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
   flex: 1 1 180px;
   min-width: 0;
   max-width: 100%;
@@ -1268,8 +1259,6 @@
 
 .worker-object-day {
   overflow: hidden;
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 }
 
 .day-summary-chips {
@@ -1558,7 +1547,6 @@
     border-radius: var(--radius-lg);
   }
 }
-<<<<<<< HEAD
 
 /* —— Maps —— */
 .map-wrapper {
@@ -1873,5 +1861,3 @@
     height: 360px;
   }
 }
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473

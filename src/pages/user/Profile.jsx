@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react"
-<<<<<<< HEAD
 import { Link } from "react-router-dom"
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 import api from "../../services/api"
 import { useAuth } from "../../context/AuthContext"
 import NotificationsPanel from "../../components/user/NotificationsPanel"
@@ -20,7 +17,6 @@ function Profile() {
 
   async function loadProfile() {
     try {
-<<<<<<< HEAD
       if (!currentUser?.id) return
       setLoading(true)
       await refreshUser()
@@ -29,14 +25,6 @@ function Profile() {
         api.get("/favorites", { params: { userId: currentUser.id } }),
         api.get("/loyalty", { params: { userId: currentUser.id } }),
         api.get(`/users/${currentUser.id}`),
-=======
-      setLoading(true)
-      await refreshUser()
-
-      const [favoritesResponse, loyaltyResponse] = await Promise.all([
-        api.get("/favorites", { params: { userId: currentUser.id } }),
-        api.get("/loyalty", { params: { userId: currentUser.id } }),
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
       ])
 
       setFavoriteObjects(favoritesResponse.data.data.objects)
@@ -44,11 +32,8 @@ function Profile() {
       updateCurrentUser({
         loyaltyPoints: loyaltyResponse.data.data.loyaltyPoints,
         remindersEnabled: loyaltyResponse.data.data.remindersEnabled,
-<<<<<<< HEAD
         specialProfile: userResponse.data.data.specialProfile,
         specialProfileStatus: userResponse.data.data.specialProfileStatus,
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
       })
     } catch {
       /* ignore */
@@ -81,7 +66,6 @@ function Profile() {
     return <div className="empty-state">Učitavanje profila...</div>
   }
 
-<<<<<<< HEAD
   const initials = currentUser?.name
     ? currentUser.name
         .split(" ")
@@ -129,17 +113,11 @@ function Profile() {
           </Link>
         </div>
       </div>
-=======
-  return (
-    <div>
-      <h1 className="dashboard-title">Moj profil</h1>
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 
       {message && <div className="success-message">{message}</div>}
 
       <div className="profile-grid">
         <div className="profile-card">
-<<<<<<< HEAD
           <div className="profile-id-row">
             <div className="profile-avatar" aria-hidden="true">
               {initials}
@@ -149,9 +127,6 @@ function Profile() {
               <p className="profile-meta">{currentUser.email}</p>
             </div>
           </div>
-=======
-          <h2>{currentUser.name}</h2>
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
           <p>
             <strong>Email:</strong> {currentUser.email}
           </p>
@@ -170,7 +145,6 @@ function Profile() {
         </div>
 
         <div className="profile-card">
-<<<<<<< HEAD
           <h2>Specijalni profil</h2>
           {!specialProfile ? (
             <p className="section-hint">Trenutno nemate dodatne pogodnosti.</p>
@@ -212,17 +186,6 @@ function Profile() {
               Preporučeno ako često zaboravite termin.
             </p>
           </div>
-=======
-          <h2>Podsjetnici</h2>
-          <label className="toggle-row">
-            <input
-              type="checkbox"
-              checked={remindersEnabled}
-              onChange={toggleReminders}
-            />
-            <span>Obavijest dan prije rezervacije</span>
-          </label>
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
         </div>
 
         <div className="profile-card">
@@ -232,7 +195,6 @@ function Profile() {
               Nema favorita. Dodajte zvjezdicu na stranici Tereni.
             </p>
           ) : (
-<<<<<<< HEAD
             <div className="favorites-chips">
               {favoriteObjects.map((obj) => (
                 <span key={obj.id} className="favorite-chip">
@@ -240,15 +202,6 @@ function Profile() {
                 </span>
               ))}
             </div>
-=======
-            <ul className="favorites-list">
-              {favoriteObjects.map((obj) => (
-                <li key={obj.id}>
-                  {obj.name} – {obj.city}
-                </li>
-              ))}
-            </ul>
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
           )}
         </div>
       </div>

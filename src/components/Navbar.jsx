@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { NavLink, useNavigate } from "react-router-dom"
-=======
-import { useNavigate } from "react-router-dom"
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 import { useAuth } from "../context/AuthContext"
 import "../styles/navbar.css"
 
@@ -15,7 +11,6 @@ function Navbar() {
     navigate("/login")
   }
 
-<<<<<<< HEAD
   function goHome() {
     if (currentUser?.role === "OWNER") {
       navigate("/owner/dashboard")
@@ -87,22 +82,9 @@ function Navbar() {
             Odjava
           </button>
         </div>
-=======
-  return (
-    <nav className="navbar">
-      <h2 className="navbar-logo">MojTeren</h2>
-
-      <div className="navbar-user">
-        <span>{currentUser?.name}</span>
-        <button onClick={handleLogout}>Odjava</button>
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
       </div>
     </nav>
   )
 }
 
-<<<<<<< HEAD
 export default Navbar
-=======
-export default Navbar
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473

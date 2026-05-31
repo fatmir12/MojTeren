@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { useEffect, useRef, useState } from "react"
-=======
-import { useEffect, useState } from "react"
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 import api from "../../services/api"
 import {
   timeToMinutes,
@@ -14,12 +10,9 @@ import {
   getDayAvailability,
 } from "../../utils/slotUtils"
 
-<<<<<<< HEAD
 const PAYMENT_IN_PROGRESS_KEY = "mojteren_payment_in_progress"
 const PAYMENT_FAILED_KEY = "mojteren_payment_failed"
 
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 function BookingModal({
   object,
   terms,
@@ -30,12 +23,8 @@ function BookingModal({
   initialEnd = "",
   isOpen,
   onClose,
-<<<<<<< HEAD
-=======
   onSuccess,
-  onLoyaltyEarned,
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
-}) {
+  onLoyaltyEarned,}) {
   const [selectedDate, setSelectedDate] = useState(initialDate)
   const [rangeStart, setRangeStart] = useState("08:00")
   const [rangeEnd, setRangeEnd] = useState("22:00")
@@ -44,23 +33,17 @@ function BookingModal({
   const [error, setError] = useState("")
   const [submitting, setSubmitting] = useState(false)
 
-<<<<<<< HEAD
   const pendingReservationIdRef = useRef(null)
   const redirectingRef = useRef(false)
 
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   useEffect(() => {
     if (isOpen) {
       setSelectedDate(initialDate)
       setSelectedStart(initialStart)
       setSelectedEnd(initialEnd)
       setError("")
-<<<<<<< HEAD
       pendingReservationIdRef.current = null
       redirectingRef.current = false
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 
       if (initialDate && object) {
         const window = getOperatingWindow(terms, object.name, initialDate)
@@ -133,7 +116,6 @@ function BookingModal({
     return hours * bookingPrice
   }
 
-<<<<<<< HEAD
   async function abandonPendingReservation() {
     const reservationId = pendingReservationIdRef.current
     if (!reservationId) return
@@ -162,8 +144,6 @@ function BookingModal({
     onClose()
   }
 
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   async function handleReserve() {
     if (!selectedDate || !selectedStart || !selectedEnd) {
       setError("Odaberite datum i vremenski period (od–do).")
@@ -177,21 +157,15 @@ function BookingModal({
 
     try {
       setSubmitting(true)
-<<<<<<< HEAD
       setError("")
 
       const response = await api.post("/payments/start", {
-=======
-
-      const response = await api.post("/reservations", {
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
         userName: currentUser.name,
         objectName: object.name,
         date: selectedDate,
         startTime: selectedStart,
         endTime: selectedEnd,
         pricePerHour: bookingPrice,
-<<<<<<< HEAD
       })
 
       const reservationId = response.data.data.reservationId
@@ -215,47 +189,17 @@ function BookingModal({
       window.location.assign(url)
     } catch (err) {
       setError(err.response?.data?.message || "Greška pri kreiranju rezervacije.")
-=======
-        status: "CONFIRMED",
-      })
-
-      const loyaltyMsg = response.data.loyaltyEarned
-        ? ` +${response.data.loyaltyEarned} loyalty bodova.`
-        : ""
-
-      onLoyaltyEarned?.(response.data.loyaltyPoints)
-
-      onSuccess(
-        `Rezervacija je potvrđena: ${response.data.data.objectName}, ${response.data.data.date}, ${response.data.data.startTime}–${response.data.data.endTime}. Ukupno: ${response.data.data.totalPrice} KM.${loyaltyMsg}`
-      )
-      onClose()
-    } catch (err) {
-      setError(
-        err.response?.data?.message || "Greška pri kreiranju rezervacije."
-      )
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
     } finally {
       setSubmitting(false)
     }
   }
 
   return (
-<<<<<<< HEAD
     <div className="reservation-modal-overlay" onClick={handleClose}>
       <div className="reservation-modal" onClick={(e) => e.stopPropagation()}>
         <div className="reservation-modal-header">
           <h2>Rezervacija – {object.name}</h2>
           <button className="delete-btn" type="button" onClick={handleClose}>
-=======
-    <div className="reservation-modal-overlay" onClick={onClose}>
-      <div
-        className="reservation-modal"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="reservation-modal-header">
-          <h2>Rezervacija – {object.name}</h2>
-          <button className="delete-btn" type="button" onClick={onClose}>
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
             Zatvori
           </button>
         </div>
@@ -274,18 +218,14 @@ function BookingModal({
           )}
         </div>
 
-<<<<<<< HEAD
         <p className="section-hint lock-hint">
           Real-time lock (5 min) aktivira se tek kada kliknete Plati / Rezerviši.
         </p>
 
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
         {error && <div className="error-message">{error}</div>}
 
         <div className="week-days-label">Odaberite datum</div>
         <div className="week-days-scroll">
-<<<<<<< HEAD
           <div className="week-days-row week-days-row--modal">
             {next7Days.map((day) => {
               const availability = getDayAvailability(
@@ -313,35 +253,6 @@ function BookingModal({
               )
             })}
           </div>
-=======
-        <div className="week-days-row week-days-row--modal">
-          {next7Days.map((day) => {
-            const availability = getDayAvailability(
-              terms,
-              reservations,
-              object.name,
-              day.date
-            )
-
-            return (
-              <button
-                key={day.date}
-                type="button"
-                className={`day-chip day-chip--${availability.status} ${
-                  day.isToday ? "day-chip--today" : ""
-                } ${selectedDate === day.date ? "day-chip--selected" : ""}`}
-                onClick={() => handleDateChange(day.date)}
-              >
-                <span className="day-chip-name">{day.dayName}</span>
-                <span className="day-chip-date">
-                  {day.dayNumber}.{day.month}.
-                </span>
-                <span className="day-chip-status">{availability.label}</span>
-              </button>
-            )
-          })}
-        </div>
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
         </div>
 
         <div className="reservation-form-grid">
@@ -384,11 +295,7 @@ function BookingModal({
           </div>
         ) : hourlySlots.length === 0 ? (
           <div className="empty-state modal-empty">
-<<<<<<< HEAD
             Za ovaj datum nema definiranih termina.
-=======
-            Za ovaj datum nema definisanih termina.
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
           </div>
         ) : (
           <>
@@ -403,12 +310,7 @@ function BookingModal({
                   key={slot.startTime}
                   type="button"
                   className={`hourly-slot hourly-slot--${slot.status.toLowerCase()} ${
-<<<<<<< HEAD
                     selectedStart === slot.startTime && selectedEnd === slot.endTime
-=======
-                    selectedStart === slot.startTime &&
-                    selectedEnd === slot.endTime
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
                       ? "hourly-slot--selected"
                       : ""
                   }`}
@@ -442,14 +344,7 @@ function BookingModal({
                         getTimeOptions(block.startTime, block.endTime)
                           .slice(0, -1)
                           .map((time) => (
-<<<<<<< HEAD
                             <option key={`start-${block.startTime}-${time}`} value={time}>
-=======
-                            <option
-                              key={`start-${block.startTime}-${time}`}
-                              value={time}
-                            >
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
                               {time}
                             </option>
                           ))
@@ -473,14 +368,7 @@ function BookingModal({
                               timeToMinutes(time) > timeToMinutes(selectedStart)
                           )
                           .map((time) => (
-<<<<<<< HEAD
                             <option key={`end-${block.endTime}-${time}`} value={time}>
-=======
-                            <option
-                              key={`end-${block.endTime}-${time}`}
-                              value={time}
-                            >
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
                               {time}
                             </option>
                           ))
@@ -491,12 +379,7 @@ function BookingModal({
 
                 {selectedStart && selectedEnd && (
                   <p className="price-summary">
-<<<<<<< HEAD
                     <strong>Ukupno:</strong> {calculateTotalPrice()} KM ({bookingPrice} KM/h)
-=======
-                    <strong>Ukupno:</strong> {calculateTotalPrice()} KM (
-                    {bookingPrice} KM/h)
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
                   </p>
                 )}
 
@@ -506,11 +389,7 @@ function BookingModal({
                   onClick={handleReserve}
                   disabled={submitting}
                 >
-<<<<<<< HEAD
                   {submitting ? "Priprema plaćanja..." : "Plati / Rezerviši"}
-=======
-                  {submitting ? "Rezervacija..." : "Potvrdi rezervaciju"}
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
                 </button>
               </div>
             )}

@@ -23,12 +23,8 @@ export async function login(req, res) {
     })
   }
 
-<<<<<<< HEAD
   const safeUser = { ...user }
   delete safeUser.password
-=======
-  const { password: _, ...safeUser } = user
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 
   res.json({
     success: true,
@@ -37,11 +33,8 @@ export async function login(req, res) {
       ...safeUser,
       loyaltyPoints: user.loyaltyPoints ?? 0,
       remindersEnabled: user.remindersEnabled !== false,
-<<<<<<< HEAD
       specialProfile: user.specialProfile ?? null,
       specialProfileStatus: user.specialProfileStatus ?? null,
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
     },
   })
 }
@@ -139,12 +132,8 @@ export async function register(req, res) {
 
   await writeData(data)
 
-<<<<<<< HEAD
   const safeUser = { ...newUser }
   delete safeUser.password
-=======
-  const { password: _pw, ...safeUser } = newUser
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 
   res.status(201).json({
 

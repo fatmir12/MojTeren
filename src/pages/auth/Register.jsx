@@ -63,11 +63,7 @@ function Register() {
   return (
     <div className="auth-page">
       <form className="auth-card" onSubmit={handleSubmit}>
-<<<<<<< HEAD
         <h1>Moj teren</h1>
-=======
-        <h1>MojTeren</h1>
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
         <p>Kreiranje korisničkog naloga</p>
 
         {error && <div className="auth-error">{error}</div>}

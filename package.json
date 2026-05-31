@@ -15,10 +15,7 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-<<<<<<< HEAD
     "leaflet": "^1.9.4",
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
     "nodemon": "^3.1.14",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",

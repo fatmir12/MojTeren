@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-=======
 function timeToMinutes(time) {
   const [hours, minutes] = time.split(":").map(Number)
   return hours * 60 + minutes
-}
-
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
-export function getReservationStartDateTime(date, startTime) {
+}export function getReservationStartDateTime(date, startTime) {
   return new Date(`${date}T${startTime}:00`)
 }
 

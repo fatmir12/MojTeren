@@ -12,10 +12,7 @@ import WorkerDashboard from "../pages/worker/Dashboard"
 import Reservations from "../pages/worker/Reservations"
 import Schedule from "../pages/worker/Schedule"
 import WorkerProfile from "../pages/worker/Profile"
-<<<<<<< HEAD
 import SpecialProfiles from "../pages/worker/SpecialProfiles"
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 import Terms from "../pages/worker/Terms"
 
 import Home from "../pages/user/Home"
@@ -23,13 +20,10 @@ import Courts from "../pages/user/Courts"
 import Reservation from "../pages/user/Reservation"
 import History from "../pages/user/History"
 import UserProfile from "../pages/user/Profile"
-<<<<<<< HEAD
 import LicenciraniTrener from "../pages/user/LicenciraniTrener"
 import SportskiKlub from "../pages/user/SportskiKlub"
 import PaymentSuccess from "../pages/user/PaymentSuccess"
 import PaymentCancel from "../pages/user/PaymentCancel"
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 
 import OwnerLayout from "../layouts/OwnerLayout"
 import WorkerLayout from "../layouts/WorkerLayout"
@@ -47,7 +41,6 @@ function AppRoutes() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-<<<<<<< HEAD
       <Route
         path="/owner/dashboard"
         element={
@@ -254,34 +247,10 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
-=======
-      
-
-      <Route path="/owner/dashboard" element={<ProtectedRoute allowedRoles={["OWNER"]}><OwnerLayout><OwnerDashboard /></OwnerLayout></ProtectedRoute>} />
-      <Route path="/owner/objects" element={<ProtectedRoute allowedRoles={["OWNER"]}><OwnerLayout><Objects /></OwnerLayout></ProtectedRoute>} />
-      <Route path="/owner/workers" element={<ProtectedRoute allowedRoles={["OWNER"]}><OwnerLayout><Workers /></OwnerLayout></ProtectedRoute>} />
-      <Route path="/owner/reports" element={<ProtectedRoute allowedRoles={["OWNER"]}><OwnerLayout><Reports /></OwnerLayout></ProtectedRoute>} />
-
-      <Route path="/worker/dashboard" element={<ProtectedRoute allowedRoles={["WORKER"]}><WorkerLayout><WorkerDashboard /></WorkerLayout></ProtectedRoute>} />
-      <Route path="/worker/reservations" element={<ProtectedRoute allowedRoles={["WORKER"]}><WorkerLayout><Reservations /></WorkerLayout></ProtectedRoute>} />
-      <Route path="/worker/schedule" element={<ProtectedRoute allowedRoles={["WORKER"]}><WorkerLayout><Schedule /></WorkerLayout></ProtectedRoute>} />
-      <Route path="/worker/profile" element={<ProtectedRoute allowedRoles={["WORKER"]}><WorkerLayout><WorkerProfile /></WorkerLayout></ProtectedRoute>} />
-      <Route path="/worker/terms" element={<ProtectedRoute allowedRoles={["WORKER"]}><WorkerLayout><Terms /></WorkerLayout></ProtectedRoute>} />
-
-      <Route path="/user/home" element={<ProtectedRoute allowedRoles={["USER"]}><UserLayout><Home /></UserLayout></ProtectedRoute>} />
-      <Route path="/user/courts" element={<ProtectedRoute allowedRoles={["USER"]}><UserLayout><Courts /></UserLayout></ProtectedRoute>} />
-      <Route path="/user/reservation" element={<ProtectedRoute allowedRoles={["USER"]}><UserLayout><Reservation /></UserLayout></ProtectedRoute>} />
-      <Route path="/user/history" element={<ProtectedRoute allowedRoles={["USER"]}><UserLayout><History /></UserLayout></ProtectedRoute>} />
-      <Route path="/user/profile" element={<ProtectedRoute allowedRoles={["USER"]}><UserLayout><UserProfile /></UserLayout></ProtectedRoute>} />
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }
 
-<<<<<<< HEAD
 export default AppRoutes
-=======
-export default AppRoutes
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473

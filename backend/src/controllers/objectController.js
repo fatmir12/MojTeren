@@ -10,16 +10,11 @@ export async function getObjects(req, res) {
 }
 
 export async function addObject(req, res) {
-<<<<<<< HEAD
   const { name, city, sport, lat, lng, address } = req.body
-=======
-  const { name, city, sport } = req.body
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 
   if (!name || !city || !sport) {
     return res.status(400).json({
       success: false,
-<<<<<<< HEAD
       message: "Naziv, grad i sport su obavezni.",
     })
   }
@@ -28,9 +23,6 @@ export async function addObject(req, res) {
     return res.status(400).json({
       success: false,
       message: "Lokacija na mapi je obavezna (pin).",
-=======
-      message: "Sva polja su obavezna.",
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
     })
   }
 
@@ -41,12 +33,9 @@ export async function addObject(req, res) {
     name,
     city,
     sport,
-<<<<<<< HEAD
     lat: Number(lat),
     lng: Number(lng),
     address: address || "",
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   }
 
   data.objects.push(newObject)
@@ -62,20 +51,12 @@ export async function addObject(req, res) {
 
 export async function updateObject(req, res) {
   const id = Number(req.params.id)
-<<<<<<< HEAD
   const { name, city, sport, lat, lng, address } = req.body
-=======
-  const { name, city, sport } = req.body
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 
   if (!name || !city || !sport) {
     return res.status(400).json({
       success: false,
-<<<<<<< HEAD
       message: "Naziv, grad i sport su obavezni.",
-=======
-      message: "Sva polja su obavezna.",
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
     })
   }
 
@@ -95,12 +76,9 @@ export async function updateObject(req, res) {
     name,
     city,
     sport,
-<<<<<<< HEAD
     ...(lat != null ? { lat: Number(lat) } : {}),
     ...(lng != null ? { lng: Number(lng) } : {}),
     ...(address !== undefined ? { address: address || "" } : {}),
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   }
 
   await writeData(data)

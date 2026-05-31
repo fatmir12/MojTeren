@@ -80,10 +80,7 @@ function Login() {
           <span>Fatmir@test.com / 123456</span>
           <span>Deni@test.com / 123456</span>
           <span>Matko@test.com / 123456</span>
-<<<<<<< HEAD
           <span>testkorisnik@gmail.com / test123</span>
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
         </div>
       </form>
     </div>

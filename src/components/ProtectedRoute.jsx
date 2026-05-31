@@ -1,11 +1,7 @@
 import { Navigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 
-<<<<<<< HEAD
 function ProtectedRoute({ children, allowedRoles, requiredSpecialProfile }) {
-=======
-function ProtectedRoute({ children, allowedRoles }) {
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   const { currentUser } = useAuth()
 
   if (!currentUser) {
@@ -16,7 +12,6 @@ function ProtectedRoute({ children, allowedRoles }) {
     return <Navigate to="/login" />
   }
 
-<<<<<<< HEAD
   if (requiredSpecialProfile) {
     if (
       currentUser.specialProfile !== requiredSpecialProfile ||
@@ -30,9 +25,3 @@ function ProtectedRoute({ children, allowedRoles }) {
 }
 
 export default ProtectedRoute
-=======
-  return children
-}
-
-export default ProtectedRoute
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473

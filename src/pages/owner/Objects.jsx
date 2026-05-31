@@ -1,24 +1,13 @@
 import { useEffect, useState } from "react"
 import api from "../../services/api"
-<<<<<<< HEAD
 import LocationMapPicker from "../../components/map/LocationMapPicker"
 
 function Objects() {
   const [objects, setObjects] = useState([])
-=======
-
-function Objects() {
-  const [objects, setObjects] = useState([])
-  const [name, setName] = useState("")
-  const [city, setCity] = useState("")
-  const [sport, setSport] = useState("")
-  const [editingId, setEditingId] = useState(null)
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
   const [loading, setLoading] = useState(true)
 
-<<<<<<< HEAD
   const [showModal, setShowModal] = useState(false)
   const [modalStep, setModalStep] = useState(1)
   const [editingId, setEditingId] = useState(null)
@@ -31,8 +20,6 @@ function Objects() {
   const [lng, setLng] = useState(null)
   const [submitting, setSubmitting] = useState(false)
 
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   useEffect(() => {
     fetchObjects()
   }, [])
@@ -40,24 +27,15 @@ function Objects() {
   async function fetchObjects() {
     try {
       setLoading(true)
-<<<<<<< HEAD
       const response = await api.get("/objects")
       setObjects(response.data.data)
     } catch {
-=======
-
-      const response = await api.get("/objects")
-
-      setObjects(response.data.data)
-    } catch (error) {
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
       setError("Greška pri učitavanju objekata.")
     } finally {
       setLoading(false)
     }
   }
 
-<<<<<<< HEAD
   function resetForm() {
     setName("")
     setSport("")
@@ -108,8 +86,6 @@ function Objects() {
     setModalStep(2)
   }
 
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   async function handleSubmit(e) {
     e.preventDefault()
     setError("")
@@ -118,7 +94,6 @@ function Objects() {
     const trimmedName = name.trim()
     const trimmedCity = city.trim()
     const trimmedSport = sport.trim()
-<<<<<<< HEAD
     const trimmedAddress = address.trim()
 
     if (!trimmedName || !trimmedCity || !trimmedSport || !trimmedAddress) {
@@ -128,11 +103,6 @@ function Objects() {
 
     if (lat == null || lng == null) {
       setError("Lokacija na mapi je obavezna.")
-=======
-
-    if (!trimmedName || !trimmedCity || !trimmedSport) {
-      setError("Sva polja moraju biti popunjena.")
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
       return
     }
 
@@ -147,7 +117,6 @@ function Objects() {
       return
     }
 
-<<<<<<< HEAD
     const payload = {
       name: trimmedName,
       city: trimmedCity,
@@ -175,53 +144,6 @@ function Objects() {
       setError(err.response?.data?.message || "Greška pri spremanju objekta.")
     } finally {
       setSubmitting(false)
-=======
-    if (editingId) {
-  try {
-    const response = await api.put(`/objects/${editingId}`, {
-      name: trimmedName,
-      city: trimmedCity,
-      sport: trimmedSport,
-    })
-
-    setObjects(
-      objects.map((object) =>
-        object.id === editingId ? response.data.data : object
-      )
-    )
-
-    setEditingId(null)
-    setName("")
-    setCity("")
-    setSport("")
-    setSuccess("Objekat je uspješno izmijenjen.")
-  } catch (error) {
-    setError(
-      error.response?.data?.message || "Greška pri izmjeni objekta."
-    )
-  }
-
-  return
-}
-
-    try {
-      const response = await api.post("/objects", {
-        name: trimmedName,
-        city: trimmedCity,
-        sport: trimmedSport,
-      })
-
-      setObjects([...objects, response.data.data])
-
-      setSuccess("Objekat je uspješno dodan.")
-      setName("")
-      setCity("")
-      setSport("")
-    } catch (error) {
-      setError(
-        error.response?.data?.message || "Greška pri dodavanju objekta."
-      )
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
     }
   }
 
@@ -232,7 +154,6 @@ function Objects() {
 
     try {
       await api.delete(`/objects/${id}`)
-<<<<<<< HEAD
       setObjects(objects.filter((object) => object.id !== id))
       setSuccess("Objekat je uspješno obrisan.")
       setError("")
@@ -241,44 +162,12 @@ function Objects() {
     }
   }
 
-=======
-
-      setObjects(objects.filter((object) => object.id !== id))
-      setSuccess("Objekat je uspješno obrisan.")
-      setError("")
-    } catch (error) {
-      setError(
-        error.response?.data?.message || "Greška pri brisanju objekta."
-      )
-    }
-  }
-
-  function handleEdit(object) {
-    setEditingId(object.id)
-    setName(object.name)
-    setCity(object.city)
-    setSport(object.sport)
-    setError("")
-    setSuccess("")
-  }
-
-  function cancelEdit() {
-    setEditingId(null)
-    setName("")
-    setCity("")
-    setSport("")
-    setError("")
-    setSuccess("")
-  }
-
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   if (loading) {
     return <div className="empty-state">Učitavanje objekata...</div>
   }
 
   return (
     <div>
-<<<<<<< HEAD
       <div className="page-header">
         <h1 className="dashboard-title">Upravljanje objektima</h1>
         <button type="button" className="edit-btn" onClick={openAddModal}>
@@ -289,49 +178,6 @@ function Objects() {
       {error && !showModal && <div className="error-message">{error}</div>}
       {success && <div className="success-message">{success}</div>}
 
-=======
-      <h1 className="dashboard-title">Upravljanje objektima</h1>
-
-      {error && <div className="error-message">{error}</div>}
-      {success && <div className="success-message">{success}</div>}
-
-      <form className="object-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Naziv objekta"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-
-        <input
-          type="text"
-          placeholder="Grad"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          required
-        />
-
-        <input
-          type="text"
-          placeholder="Sport"
-          value={sport}
-          onChange={(e) => setSport(e.target.value)}
-          required
-        />
-
-        <button type="submit">
-          {editingId ? "Sačuvaj izmjene" : "Dodaj objekat"}
-        </button>
-
-        {editingId && (
-          <button type="button" className="delete-btn" onClick={cancelEdit}>
-            Odustani
-          </button>
-        )}
-      </form>
-
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
       {objects.length === 0 ? (
         <div className="empty-state">Trenutno nema dodanih objekata.</div>
       ) : (
@@ -340,7 +186,6 @@ function Objects() {
             <div className="object-card" key={object.id}>
               <h3>{object.name}</h3>
               <p>Grad: {object.city}</p>
-<<<<<<< HEAD
               {object.address && <p>Adresa: {object.address}</p>}
               <p>Sport: {object.sport}</p>
 
@@ -349,19 +194,6 @@ function Objects() {
                   Izmijeni
                 </button>
                 <button className="delete-btn" type="button" onClick={() => handleDelete(object.id)}>
-=======
-              <p>Sport: {object.sport}</p>
-
-              <div className="card-buttons">
-                <button className="edit-btn" onClick={() => handleEdit(object)}>
-                  Izmijeni
-                </button>
-
-                <button
-                  className="delete-btn"
-                  onClick={() => handleDelete(object.id)}
-                >
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
                   Obriši
                 </button>
               </div>
@@ -369,7 +201,6 @@ function Objects() {
           ))}
         </div>
       )}
-<<<<<<< HEAD
 
       {showModal && (
         <div className="reservation-modal-overlay" onClick={closeModal}>
@@ -466,14 +297,8 @@ function Objects() {
           </div>
         </div>
       )}
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
     </div>
   )
 }
 
-<<<<<<< HEAD
 export default Objects
-=======
-export default Objects
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473

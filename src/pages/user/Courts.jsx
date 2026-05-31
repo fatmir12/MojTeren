@@ -1,16 +1,9 @@
-<<<<<<< HEAD
 import { useEffect, useMemo, useState } from "react"
-=======
-import { useEffect, useState } from "react"
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 import { useSearchParams } from "react-router-dom"
 import api from "../../services/api"
 import { useAuth } from "../../context/AuthContext"
 import BookingModal from "../../components/user/BookingModal"
-<<<<<<< HEAD
 import CourtsMap from "../../components/map/CourtsMap"
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
 import FavoriteButton from "../../components/user/FavoriteButton"
 import { getNext7Days, getDayAvailability } from "../../utils/slotUtils"
 import { useToast } from "../../context/ToastContext"
@@ -29,10 +22,6 @@ function Courts() {
   const [search, setSearch] = useState("")
   const [sportFilter, setSportFilter] = useState("")
   const [availabilityFilter, setAvailabilityFilter] = useState("all")
-<<<<<<< HEAD
-=======
-
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   const [bookingObject, setBookingObject] = useState(null)
   const [bookingDate, setBookingDate] = useState("")
   const [bookingStart, setBookingStart] = useState("")
@@ -52,7 +41,6 @@ function Courts() {
   }, [])
 
   useEffect(() => {
-<<<<<<< HEAD
     const es = new EventSource("http://localhost:5000/api/events")
     let refreshTimer = null
 
@@ -86,8 +74,6 @@ function Courts() {
   }, [])
 
   useEffect(() => {
-=======
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
     if (loading || objects.length === 0) return
 
     const objectId = searchParams.get("objectId")
@@ -165,7 +151,6 @@ function Courts() {
     return av.status === "available" || av.status === "partial"
   }
 
-<<<<<<< HEAD
   const filteredObjects = useMemo(() => {
     return objects.filter((object) => {
       const matchesSearch =
@@ -186,26 +171,6 @@ function Courts() {
 
   const sports = [...new Set(objects.map((object) => object.sport))]
 
-=======
-  const sports = [...new Set(objects.map((object) => object.sport))]
-
-  const filteredObjects = objects.filter((object) => {
-    const matchesSearch =
-      object.name.toLowerCase().includes(search.toLowerCase()) ||
-      object.city.toLowerCase().includes(search.toLowerCase())
-
-    const matchesSport = sportFilter === "" || object.sport === sportFilter
-
-    const matchesFavorites =
-      availabilityFilter !== "favorites" || favoriteIds.includes(object.id)
-
-    const matchesFreeToday =
-      availabilityFilter !== "freeToday" || hasFreeToday(object.name)
-
-    return matchesSearch && matchesSport && matchesFavorites && matchesFreeToday
-  })
-
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   if (loading) {
     return (
       <div>
@@ -220,23 +185,9 @@ function Courts() {
       <h1 className="dashboard-title">Tereni i rezervacije</h1>
 
       <p className="section-hint">
-<<<<<<< HEAD
         Kliknite pin na mapi da odmah rezervišete termin. Lock se aktivira tek kada kliknete Plati / Rezerviši (5 min).
       </p>
 
-=======
-        Pregled dostupnosti u narednih 7 dana. Koristite filtere ili kliknite na dan za
-        rezervaciju.
-      </p>
-
-      <div className="week-legend">
-        <span className="legend-item legend-available">Slobodno</span>
-        <span className="legend-item legend-partial">Djelimično</span>
-        <span className="legend-item legend-full">Popunjeno</span>
-        <span className="legend-item legend-none">Nema termina</span>
-      </div>
-
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
       <div className="object-form filters-form">
         <input
           type="text"
@@ -245,14 +196,7 @@ function Courts() {
           onChange={(e) => setSearch(e.target.value)}
         />
 
-<<<<<<< HEAD
         <select value={sportFilter} onChange={(e) => setSportFilter(e.target.value)}>
-=======
-        <select
-          value={sportFilter}
-          onChange={(e) => setSportFilter(e.target.value)}
-        >
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
           <option value="">Svi sportovi</option>
           {sports.map((sport) => (
             <option key={sport} value={sport}>
@@ -274,7 +218,6 @@ function Courts() {
       {filteredObjects.length === 0 ? (
         <div className="empty-state">Nema rezultata za odabrane filtere.</div>
       ) : (
-<<<<<<< HEAD
         <>
           <div className="courts-map-section">
             <CourtsMap
@@ -352,70 +295,6 @@ function Courts() {
             ))}
           </div>
         </>
-=======
-        <div className="courts-list">
-          {filteredObjects.map((object) => (
-            <article className="court-card" key={object.id}>
-              <div className="court-card-header">
-                <div>
-                  <div className="card-title-row">
-                    <h3>{object.name}</h3>
-                    <FavoriteButton
-                      isFavorite={favoriteIds.includes(object.id)}
-                      onToggle={() => toggleFavorite(object.id)}
-                    />
-                  </div>
-                  <p className="court-meta">
-                    {object.city} · {object.sport}
-                  </p>
-                </div>
-                <button
-                  className="edit-btn"
-                  type="button"
-                  onClick={() => openBooking(object)}
-                >
-                  Rezerviši
-                </button>
-              </div>
-
-              <div className="week-days-label">Narednih 7 dana</div>
-
-              <div className="week-days-scroll">
-                <div className="week-days-row">
-                  {next7Days.map((day) => {
-                    const availability = getDayAvailability(
-                      terms,
-                      reservations,
-                      object.name,
-                      day.date
-                    )
-
-                    return (
-                      <button
-                        key={day.date}
-                        type="button"
-                        className={`day-chip day-chip--${availability.status} ${
-                          day.isToday ? "day-chip--today" : ""
-                        }`}
-                        title={`${day.date} – ${availability.label}`}
-                        onClick={() => openBooking(object, day.date)}
-                      >
-                        <span className="day-chip-name">{day.dayName}</span>
-                        <span className="day-chip-date">
-                          {day.dayNumber}.{day.month}.
-                        </span>
-                        <span className="day-chip-status">
-                          {availability.label}
-                        </span>
-                      </button>
-                    )
-                  })}
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
       )}
 
       <BookingModal
@@ -429,13 +308,7 @@ function Courts() {
         isOpen={!!bookingObject}
         onClose={closeBooking}
         onSuccess={handleBookingSuccess}
-<<<<<<< HEAD
         onLoyaltyEarned={(points) => updateCurrentUser({ loyaltyPoints: points })}
-=======
-        onLoyaltyEarned={(points) =>
-          updateCurrentUser({ loyaltyPoints: points })
-        }
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
       />
     </div>
   )

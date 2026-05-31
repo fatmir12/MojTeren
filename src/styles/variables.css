@@ -37,11 +37,7 @@
   --stat-purple: #7c3aed;
 
   /* Tipografija i razmaci */
-<<<<<<< HEAD
   --font-sans: "Poppins", system-ui, -apple-system, sans-serif;
-=======
-  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
->>>>>>> 4ffb565aaf6b17a6fe10e4e498a6a39ffe35c473
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
