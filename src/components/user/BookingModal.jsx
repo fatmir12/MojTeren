@@ -188,7 +188,14 @@ function BookingModal({
       sessionStorage.removeItem(PAYMENT_FAILED_KEY)
       window.location.assign(url)
     } catch (err) {
-      setError(err.response?.data?.message || "Greška pri kreiranju rezervacije.")
+      const message =
+        err.response?.data?.message || "Greška pri kreiranju rezervacije."
+      setError(
+        message.includes("Stripe nije konfiguriran")
+          ? `${message} Zatim ponovo kliknite Plati / Rezerviši.`
+          : message
+      )
+      onSuccess?.()
     } finally {
       setSubmitting(false)
     }

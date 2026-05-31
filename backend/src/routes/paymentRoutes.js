@@ -1,6 +1,7 @@
 import express from "express"
 import {
   startCheckout,
+  resumeCheckout,
   webhook,
   mockConfirmPayment,
   abandonPayment,
@@ -10,6 +11,7 @@ import {
 const router = express.Router()
 
 router.post("/start", startCheckout)
+router.post("/resume", resumeCheckout)
 router.post("/verify-session", verifyCheckoutSession)
 router.post("/abandon", abandonPayment)
 router.post("/mock/confirm", mockConfirmPayment)

@@ -25,9 +25,44 @@ function calculateHours(startTime, endTime) {
 }
 
 function getStripe() {
-  const key = process.env.STRIPE_SECRET_KEY
+  const key = process.env.STRIPE_SECRET_KEY?.trim()
   if (!key) return null
   return new Stripe(key)
+}
+
+function rollbackPendingCheckout(data, reservation) {
+  const index = data.reservations.findIndex((r) => r.id === reservation.id)
+  if (index !== -1) {
+    data.reservations.splice(index, 1)
+  }
+  releaseLocksForReservation(data, reservation.id)
+}
+
+async function createStripeCheckoutSession(stripe, reservation) {
+  const successUrl = `${frontendBaseUrl()}/user/payment/success?reservationId=${reservation.id}&session_id={CHECKOUT_SESSION_ID}`
+  const cancelUrl = `${frontendBaseUrl()}/user/payment/cancel?reservationId=${reservation.id}`
+
+  return stripe.checkout.sessions.create({
+    mode: "payment",
+    success_url: successUrl,
+    cancel_url: cancelUrl,
+    metadata: {
+      reservationId: String(reservation.id),
+    },
+    line_items: [
+      {
+        quantity: 1,
+        price_data: {
+          currency: "bam",
+          unit_amount: Math.round(reservation.totalPrice * 100),
+          product_data: {
+            name: `Rezervacija: ${reservation.objectName}`,
+            description: `${reservation.date} ${reservation.startTime}–${reservation.endTime}`,
+          },
+        },
+      },
+    ],
+  })
 }
 
 function frontendBaseUrl() {
@@ -164,59 +199,145 @@ export async function startCheckout(req, res) {
   const stripe = getStripe()
 
   if (!stripe) {
-    await writeData(data)
+    rollbackPendingCheckout(data, reservation)
     return res.status(503).json({
       success: false,
-      message: "Stripe nije konfiguriran. Postavite STRIPE_SECRET_KEY u backend/.env",
+      message:
+        "Stripe nije konfiguriran. Dodajte STRIPE_SECRET_KEY u backend/.env i restartujte backend (npm run dev).",
     })
   }
 
-  const successUrl = `${frontendBaseUrl()}/user/payment/success?reservationId=${reservation.id}&session_id={CHECKOUT_SESSION_ID}`
-  const cancelUrl = `${frontendBaseUrl()}/user/payment/cancel?reservationId=${reservation.id}`
+  try {
+    const session = await createStripeCheckoutSession(stripe, reservation)
 
-  const session = await stripe.checkout.sessions.create({
-    mode: "payment",
-    success_url: successUrl,
-    cancel_url: cancelUrl,
-    metadata: {
-      reservationId: String(reservation.id),
-    },
-    line_items: [
-      {
-        quantity: 1,
-        price_data: {
-          currency: "bam",
-          unit_amount: Math.round(reservation.totalPrice * 100),
-          product_data: {
-            name: `Rezervacija: ${reservation.objectName}`,
-            description: `${reservation.date} ${reservation.startTime}–${reservation.endTime}`,
-          },
-        },
+    if (!session.url) {
+      rollbackPendingCheckout(data, reservation)
+      return res.status(500).json({
+        success: false,
+        message: "Stripe nije vratio link za plaćanje.",
+      })
+    }
+
+    reservation.payment = {
+      provider: "stripe",
+      sessionId: session.id,
+      amount: reservation.totalPrice,
+      currency: "BAM",
+      status: "PENDING",
+    }
+
+    await writeData(data)
+
+    return res.status(201).json({
+      success: true,
+      message: "Checkout kreiran.",
+      data: {
+        reservationId: reservation.id,
+        expiresAtMs,
+        checkoutUrl: session.url,
+        paymentUrl: session.url,
+        provider: "stripe",
       },
-    ],
-  })
+    })
+  } catch (err) {
+    rollbackPendingCheckout(data, reservation)
+    return res.status(500).json({
+      success: false,
+      message: err.message || "Greška pri kreiranju Stripe checkouta.",
+    })
+  }
+}
 
-  reservation.payment = {
-    provider: "stripe",
-    sessionId: session.id,
-    amount: reservation.totalPrice,
-    currency: "BAM",
-    status: "PENDING",
+export async function resumeCheckout(req, res) {
+  const reservationId = Number(req.body?.reservationId)
+  const { userName } = req.body
+
+  if (!reservationId) {
+    return res.status(400).json({ success: false, message: "reservationId je obavezan." })
   }
 
-  await writeData(data)
+  const stripe = getStripe()
+  if (!stripe) {
+    return res.status(503).json({
+      success: false,
+      message:
+        "Stripe nije konfiguriran. Dodajte STRIPE_SECRET_KEY u backend/.env i restartujte backend.",
+    })
+  }
 
-  return res.status(201).json({
-    success: true,
-    message: "Checkout kreiran.",
-    data: {
-      reservationId: reservation.id,
-      expiresAtMs,
-      checkoutUrl: session.url,
-      paymentUrl: session.url,
+  const data = await readData()
+  cleanupExpiredLocks(data)
+
+  const reservation = data.reservations.find((r) => r.id === reservationId)
+
+  if (!reservation) {
+    return res.status(404).json({ success: false, message: "Rezervacija nije pronađena." })
+  }
+
+  if (userName && reservation.userName !== userName) {
+    return res.status(403).json({ success: false, message: "Nemate pristup ovoj rezervaciji." })
+  }
+
+  if (reservation.status !== "WAITING_PAYMENT") {
+    return res.status(400).json({
+      success: false,
+      message: "Ova rezervacija više ne čeka plaćanje.",
+    })
+  }
+
+  try {
+    const existingSessionId = reservation.payment?.sessionId
+    if (existingSessionId) {
+      const existing = await stripe.checkout.sessions.retrieve(existingSessionId)
+      if (existing.url && existing.status === "open") {
+        return res.json({
+          success: true,
+          message: "Nastavak plaćanja.",
+          data: {
+            reservationId: reservation.id,
+            checkoutUrl: existing.url,
+            paymentUrl: existing.url,
+            provider: "stripe",
+          },
+        })
+      }
+    }
+
+    const session = await createStripeCheckoutSession(stripe, reservation)
+
+    if (!session.url) {
+      return res.status(500).json({
+        success: false,
+        message: "Stripe nije vratio link za plaćanje.",
+      })
+    }
+
+    reservation.payment = {
       provider: "stripe",
-    },
-  })
+      sessionId: session.id,
+      amount: reservation.totalPrice,
+      currency: "BAM",
+      status: "PENDING",
+    }
+
+    await writeData(data)
+
+    return res.json({
+      success: true,
+      message: "Checkout kreiran.",
+      data: {
+        reservationId: reservation.id,
+        checkoutUrl: session.url,
+        paymentUrl: session.url,
+        provider: "stripe",
+      },
+    })
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      message: err.message || "Greška pri nastavku plaćanja.",
+    })
+  }
 }
 
 export async function verifyCheckoutSession(req, res) {

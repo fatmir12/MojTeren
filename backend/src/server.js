@@ -1,7 +1,7 @@
 /* global process */
+import "./loadEnv.js"
 import express from "express"
 import cors from "cors"
-import dotenv from "dotenv"
 import objectRoutes from "./routes/objectRoutes.js"
 import termRoutes from "./routes/termRoutes.js"
 import workerRoutes from "./routes/workerRoutes.js"
@@ -17,8 +17,6 @@ import userRoutes from "./routes/userRoutes.js"
 import specialProfileRoutes from "./routes/specialProfileRoutes.js"
 import { cleanupExpiredLocks } from "./services/lockService.js"
 import { readData, writeData } from "./config/fileStorage.js"
-
-dotenv.config()
 
 const app = express()
 
@@ -53,7 +51,9 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => {
+  const stripeReady = Boolean(process.env.STRIPE_SECRET_KEY?.trim())
   console.log(`Server radi na portu ${PORT}`)
+  console.log(stripeReady ? "Stripe: konfiguriran" : "Stripe: NEDOSTAJE STRIPE_SECRET_KEY u backend/.env")
 })
 
 // Background sweeper for 5-min payment locks.

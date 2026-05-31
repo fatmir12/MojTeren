@@ -28,6 +28,7 @@ function History() {
   const [reviewingId, setReviewingId] = useState(null)
   const [rating, setRating] = useState(5)
   const [comment, setComment] = useState("")
+  const [payingId, setPayingId] = useState(null)
 
   useEffect(() => {
     fetchData()
@@ -83,6 +84,26 @@ function History() {
       refreshUser()
     } catch (err) {
       toast.error(err.response?.data?.message || "Greška pri otkazivanju.")
+    }
+  }
+
+  async function handleContinuePayment(reservation) {
+    try {
+      setPayingId(reservation.id)
+      const response = await api.post("/payments/resume", {
+        reservationId: reservation.id,
+        userName: currentUser.name,
+      })
+      const url = response.data.data.checkoutUrl || response.data.data.paymentUrl
+      if (!url) {
+        toast.error("Nije vraćen link za plaćanje.")
+        return
+      }
+      window.location.href = url
+    } catch (err) {
+      toast.error(err.response?.data?.message || "Greška pri otvaranju plaćanja.")
+    } finally {
+      setPayingId(null)
     }
   }
 
@@ -161,6 +182,23 @@ function History() {
               >
                 {STATUS_LABELS[reservation.status] || reservation.status}
               </span>
+
+              {reservation.status === "WAITING_PAYMENT" && (
+                <div className="history-actions">
+                  <p className="section-hint">
+                    Plaćanje nije završeno. Kliknite da otvorite Stripe checkout
+                    (rok ~5 min).
+                  </p>
+                  <button
+                    className="edit-btn"
+                    type="button"
+                    disabled={payingId === reservation.id}
+                    onClick={() => handleContinuePayment(reservation)}
+                  >
+                    {payingId === reservation.id ? "Otvaranje..." : "Nastavi plaćanje"}
+                  </button>
+                </div>
+              )}
 
               {reservation.status === "CONFIRMED" && canCancel && (
                 <div className="history-actions">
