@@ -148,8 +148,6 @@ Na frontendu **nije** potreban `@stripe/stripe-js`.
 | `STRIPE_WEBHOOK_SECRET` | Signing secret za webhook (`whsec_...`) |
 | `FRONTEND_URL` | URL frontenda za redirect nakon plaćanja (npr. `http://localhost:5173`) |
 
-Fajl **`backend/.env` nikad ne commitaj** — već je u `.gitignore`.
-
 ### Webhook (lokalno)
 
 U trećem terminalu, dok backend radi:
